@@ -1,6 +1,6 @@
 import React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import { createStyles, makeStyles, Theme } from '@mui/material/styles';
+import TextField from '@mui/material/TextField';
 
 export default {
   title: 'Material UI/DatePicker',

@@ -1,6 +1,6 @@
 import { css, Global, ThemeProvider } from '@emotion/react';
-import CssBaseline from '@material-ui/core/CssBaseline/CssBaseline';
-import { MuiThemeProvider, StylesProvider } from '@material-ui/core/styles';
+import CssBaseline from '@mui/material/CssBaseline/CssBaseline';
+import { MuiThemeProvider, StylesProvider } from '@mui/material/styles';
 import { DocsContainer as BaseContainer } from '@storybook/addon-docs/blocks';
 import { themes } from '@storybook/theming';
 import React from 'react';

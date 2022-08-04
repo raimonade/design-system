@@ -1,8 +1,8 @@
-import { createTheme, ThemeOptions } from '@material-ui/core/styles';
-import { BrandColors, MonochromeColors } from '@material-ui/core/styles/createPalette';
-import { Overrides } from '@material-ui/core/styles/overrides';
+import { createTheme, ThemeOptions } from '@mui/material/styles';
+import { BrandColors, MonochromeColors } from '@mui/material/styles/createPalette';
+import { Overrides } from '@mui/material/styles/overrides';
 import { deepMerge } from '../utils/deep-merge';
-declare module '@material-ui/core/styles/createPalette' {
+declare module '@mui/material/styles/createPalette' {
   export type BrandColors = {
     orange: React.CSSProperties['color'];
     darkGrey: React.CSSProperties['color'];
@@ -48,7 +48,7 @@ declare module '@material-ui/core/styles/createPalette' {
     monochrome: MonochromeColors;
   }
 }
-declare module '@material-ui/core/styles/createTypography' {
+declare module '@mui/material/styles/createTypography' {
   export type TypographySize = {
     s1: string;
     s2: string;

@@ -1,6 +1,6 @@
 import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline/CssBaseline';
-import { StylesProvider, MuiThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@mui/material/CssBaseline/CssBaseline';
+import { StylesProvider, MuiThemeProvider } from '@mui/material/styles';
 import { ThemeProvider, Global, css } from '@emotion/react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { lightTheme, darkTheme } from '../../src/shared/theme';

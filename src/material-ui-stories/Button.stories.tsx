@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
-import CloudUploadIcon from '@material-ui/icons/CloudUpload';
-import DeleteIcon from '@material-ui/icons/Delete';
-import KeyboardVoiceIcon from '@material-ui/icons/KeyboardVoice';
-import PhotoCamera from '@material-ui/icons/PhotoCamera';
-import SaveIcon from '@material-ui/icons/Save';
-import SendIcon from '@material-ui/icons/Send';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import { createStyles, makeStyles, Theme } from '@mui/material/styles';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import DeleteIcon from '@mui/icons-material/Delete';
+import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import SaveIcon from '@mui/icons-material/Save';
+import SendIcon from '@mui/icons-material/Send';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

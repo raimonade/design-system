@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { darken, fade } from '@material-ui/core';
+import { darken, fade } from '@mui/material';
 import PropTypes from 'prop-types';
 import React, { ComponentProps, ComponentType, Fragment } from 'react';
 import { easing } from '../../shared/animation';
