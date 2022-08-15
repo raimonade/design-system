@@ -180,6 +180,6 @@ const ButtonsWrapper = styled.div`
   flex-direction: 'column';
   align-items: 'center';
   & > * {
-    margin: ${p => p.theme.spacing(1)}px;
+    margin: ${p => p.theme.spacing(1)};
   }
 `;

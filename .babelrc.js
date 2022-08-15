@@ -1,16 +1,21 @@
-const sharedPresets = ['@babel/preset-typescript', ["@babel/preset-react", {
-  "runtime": "automatic"
-}]];
+const sharedPresets = [
+  '@babel/typescript',
+  [
+    '@babel/preset-react',
+    {
+      runtime: 'automatic',
+    },
+  ],
+];
 const shared = {
-  ignore: ['src/**/*.spec.ts', 'src/**/*.stories.tsx'],
+  ignore: ['src/**/*.stories.ts'],
+  presets: sharedPresets,
+  plugins: ['@babel/plugin-transform-runtime'],
 };
 
 module.exports = {
   env: {
-    esmUnbundled: {
-      ...shared,
-      presets: sharedPresets,
-    },
+    esmUnbundled: shared,
     esmBundled: {
       ...shared,
       presets: [
@@ -23,7 +28,7 @@ module.exports = {
         ...sharedPresets,
       ],
     },
-    cjsUnbundled: {
+    cjs: {
       ...shared,
       presets: [
         [

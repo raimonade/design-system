@@ -291,7 +291,7 @@ const MultilineInternal = () => {
           id="standard-multiline-flexible"
           label="Multiline"
           multiline
-          rowsMax={4}
+          maxRows={4}
           value={value}
           onChange={handleChange}
         />
@@ -303,7 +303,7 @@ const MultilineInternal = () => {
           id="filled-multiline-flexible"
           label="Multiline"
           multiline
-          rowsMax={4}
+          maxRows={4}
           value={value}
           onChange={handleChange}
           variant="filled"
@@ -329,7 +329,7 @@ const MultilineInternal = () => {
           id="outlined-multiline-flexible"
           label="Multiline"
           multiline
-          rowsMax={4}
+          maxRows={4}
           value={value}
           onChange={handleChange}
           variant="outlined"

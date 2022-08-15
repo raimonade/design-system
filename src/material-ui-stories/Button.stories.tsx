@@ -135,13 +135,13 @@ const SizesInternal = () => {
         <IconButton aria-label="delete" className={classes.margin} size="small">
           <ArrowDownwardIcon fontSize="inherit" />
         </IconButton>
-        <IconButton aria-label="delete" className={classes.margin}>
+        <IconButton aria-label="delete" className={classes.margin} size="large">
           <DeleteIcon fontSize="small" />
         </IconButton>
-        <IconButton aria-label="delete" className={classes.margin}>
+        <IconButton aria-label="delete" className={classes.margin} size="large">
           <DeleteIcon />
         </IconButton>
-        <IconButton aria-label="delete" className={classes.margin}>
+        <IconButton aria-label="delete" className={classes.margin} size="large">
           <DeleteIcon fontSize="large" />
         </IconButton>
       </div>
@@ -163,7 +163,7 @@ const UploadButtonInternal = () => {
       </label>
       <input accept="image/*" className={classes.input} id="icon-button-file" type="file" />
       <label htmlFor="icon-button-file">
-        <IconButton color="primary" aria-label="upload picture" component="span">
+        <IconButton color="primary" aria-label="upload picture" component="span" size="large">
           <PhotoCamera />
         </IconButton>
       </label>
@@ -184,7 +184,10 @@ const ButtonsWithIconsAndLabelInternal = () => {
       <Button variant="contained" color="primary" className={classes.button} endIcon={<SendIcon />}>
         Send
       </Button>
-      <Button variant="contained" color="default" className={classes.button} startIcon={<CloudUploadIcon />}>
+      <Button
+        variant="contained"
+        className={classes.button}
+        startIcon={<CloudUploadIcon />}>
         Upload
       </Button>
       <Button
@@ -210,7 +213,7 @@ export const ButtonsWithIconsAndLabel = () => <ButtonsWithIconsAndLabelInternal 
 
 const ButtonsWrapper = styled.div`
   & > * {
-    margin-right: ${p => p.theme.spacing(1)}px;
-    margin-bottom: ${p => p.theme.spacing(1)}px;
+    margin-right: ${p => p.theme.spacing(1)};
+    margin-bottom: ${p => p.theme.spacing(1)};
   }
 `;

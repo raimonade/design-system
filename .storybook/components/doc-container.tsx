@@ -1,4 +1,4 @@
-import { css, Global, ThemeProvider } from '@emotion/react';
+import { css, Global, ThemeProvider, Theme, StyledEngineProvider } from '@emotion/react';
 import CssBaseline from '@mui/material/CssBaseline/CssBaseline';
 import { MuiThemeProvider, StylesProvider } from '@mui/material/styles';
 import { DocsContainer as BaseContainer } from '@storybook/addon-docs/blocks';
@@ -7,14 +7,21 @@ import React from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { darkTheme, lightTheme } from '../../src/shared/theme';
 
+
+declare module '@mui/styles/defaultTheme' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends Theme {}
+}
+
+
 export const DocsContainer = ({ children, context }) => {
   const dark = useDarkMode();
   const theme = dark ? darkTheme : lightTheme;
 
-  return (
-    <>
-      <Global styles={getGlobalStyle(theme)} />
-      <StylesProvider injectFirst>
+  return <>
+    <Global styles={getGlobalStyle(theme)} />
+    <StylesProvider injectFirst>
+      <StyledEngineProvider injectFirst>
         <MuiThemeProvider theme={theme}>
           <CssBaseline />
           <ThemeProvider theme={theme}>
@@ -34,9 +41,9 @@ export const DocsContainer = ({ children, context }) => {
             </BaseContainer>
           </ThemeProvider>
         </MuiThemeProvider>
-      </StylesProvider>
-    </>
-  );
+      </StyledEngineProvider>
+    </StylesProvider>
+  </>;
 };
 
 const getGlobalStyle = theme => css`

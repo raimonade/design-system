@@ -1,7 +1,7 @@
-import { createTheme, ThemeOptions } from '@mui/material/styles';
+import { ComponentsOverrides, createTheme, ThemeOptions } from '@mui/material/styles';
 import { BrandColors, MonochromeColors } from '@mui/material/styles/createPalette';
-import { Overrides } from '@mui/material/styles/overrides';
 import { deepMerge } from '../utils/deep-merge';
+
 declare module '@mui/material/styles/createPalette' {
   export type BrandColors = {
     orange: React.CSSProperties['color'];
@@ -93,7 +93,7 @@ const monochrome: MonochromeColors = {
   darkest: '#333333',
 };
 
-const lightThemeOptions: ThemeOptions = {
+export const lightThemeOptions: ThemeOptions = {
   spacing: 8,
   breakpoints: {
     values: {
@@ -160,9 +160,9 @@ const lightThemeOptions: ThemeOptions = {
   },
 };
 
-const darkThemeOptions: ThemeOptions = deepMerge({}, lightThemeOptions, {
+export const darkThemeOptions: ThemeOptions = deepMerge({}, lightThemeOptions, {
   palette: {
-    type: 'dark',
+    mode: 'dark',
     background: {
       paper: '#333333',
     },
@@ -175,7 +175,7 @@ const darkThemeOptions: ThemeOptions = deepMerge({}, lightThemeOptions, {
 export const darkTheme = createTheme(darkThemeOptions);
 export const lightTheme = createTheme(lightThemeOptions);
 
-const lightOverrides: Overrides = {
+export const lightOverrides: ComponentsOverrides = {
   MuiCssBaseline: {
     '@global': {
       html: {
@@ -242,8 +242,7 @@ const lightOverrides: Overrides = {
       },
     },
   },
-
-  MuiExpansionPanel: {
+  MuiAccordion: {
     root: {
       border: '1px solid #d4d4d4',
       boxShadow: 'none',
@@ -258,7 +257,7 @@ const lightOverrides: Overrides = {
       },
     },
   },
-  MuiExpansionPanelSummary: {
+  MuiAccordionSummary: {
     root: {
       borderBottom: '1px solid #d4d4d4',
       padding: '0 15px',
@@ -278,7 +277,7 @@ const lightOverrides: Overrides = {
       },
     },
   },
-  MuiExpansionPanelDetails: {
+  MuiAccordionDetails: {
     root: {
       display: 'flex',
       flexDirection: 'column',
@@ -293,7 +292,7 @@ const lightOverrides: Overrides = {
   },
 };
 
-const darkOverrides: Overrides = deepMerge({}, lightOverrides, {
+export const darkOverrides: ComponentsOverrides = deepMerge({}, lightOverrides, {
   MuiCssBaseline: {
     '@global': {
       body: {
@@ -302,9 +301,24 @@ const darkOverrides: Overrides = deepMerge({}, lightOverrides, {
       },
     },
   },
-} as Overrides);
+} as ComponentsOverrides);
 
-lightTheme.overrides = lightOverrides;
-darkTheme.overrides = darkOverrides;
+lightTheme.components = Object.keys(lightOverrides).reduce((acc, key) => {
+  acc[key] = {
+    styleOverrides: {
+      ...lightOverrides[key],
+    },
+  };
+  return acc;
+}, {});
+
+darkTheme.components = Object.keys(darkOverrides).reduce((acc, key) => {
+  acc[key] = {
+    styleOverrides: {
+      ...lightOverrides[key],
+    },
+  };
+  return acc;
+}, {});
 
 export type Theme = typeof lightTheme;
