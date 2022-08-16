@@ -1,6 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
-import { createStyles, makeStyles, Theme, useTheme } from '@mui/material/styles';
+import { Theme, useTheme } from '@mui/material/styles';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import FormHelperText from '@mui/material/FormHelperText';
 import ListSubheader from '@mui/material/ListSubheader';
 import Input from '@mui/material/Input';
@@ -8,7 +10,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import ListItemText from '@mui/material/ListItemText';
-import Select from '@mui/material/Select';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Checkbox from '@mui/material/Checkbox';
 import Chip from '@mui/material/Chip';
 
@@ -78,7 +80,7 @@ const SimpleSelectInternal = () => {
   const classes = useStyles();
   const [age, setAge] = React.useState('');
 
-  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+  const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value as string);
   };
 
@@ -302,11 +304,11 @@ const MultipleSelectInternal = () => {
   const theme = useTheme();
   const [personName, setPersonName] = React.useState<string[]>([]);
 
-  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+  const handleChange = (event: SelectChangeEvent<unknown>) => {
     setPersonName(event.target.value as string[]);
   };
 
-  const handleChangeMultiple = (event: React.ChangeEvent<{ value: unknown }>) => {
+  const handleChangeMultiple = (event: SelectChangeEvent<unknown>) => {
     const { options } = event.target as HTMLSelectElement;
     const value: string[] = [];
     for (let i = 0, l = options.length; i < l; i += 1) {

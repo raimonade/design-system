@@ -1,4 +1,4 @@
-import { ComponentsOverrides, createTheme, ThemeOptions } from '@mui/material/styles';
+import { ComponentsOverrides, createTheme, DeprecatedThemeOptions, adaptV4Theme } from '@mui/material/styles';
 import { BrandColors, MonochromeColors } from '@mui/material/styles/createPalette';
 import { deepMerge } from '../utils/deep-merge';
 
@@ -93,7 +93,7 @@ const monochrome: MonochromeColors = {
   darkest: '#333333',
 };
 
-export const lightThemeOptions: ThemeOptions = {
+export const lightThemeOptions: DeprecatedThemeOptions = {
   spacing: 8,
   breakpoints: {
     values: {
@@ -160,7 +160,7 @@ export const lightThemeOptions: ThemeOptions = {
   },
 };
 
-export const darkThemeOptions: ThemeOptions = deepMerge({}, lightThemeOptions, {
+export const darkThemeOptions: DeprecatedThemeOptions = deepMerge({}, lightThemeOptions, {
   palette: {
     mode: 'dark',
     background: {
@@ -170,10 +170,10 @@ export const darkThemeOptions: ThemeOptions = deepMerge({}, lightThemeOptions, {
     panelBackgroundColor: '#292929',
     subPanelBackgroundColor: '#333333',
   },
-} as ThemeOptions);
+} as DeprecatedThemeOptions);
 
-export const darkTheme = createTheme(darkThemeOptions);
-export const lightTheme = createTheme(lightThemeOptions);
+export const darkTheme = createTheme(adaptV4Theme(darkThemeOptions));
+export const lightTheme = createTheme(adaptV4Theme(lightThemeOptions));
 
 export const lightOverrides: ComponentsOverrides = {
   MuiCssBaseline: {

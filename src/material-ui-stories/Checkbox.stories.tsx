@@ -1,5 +1,8 @@
 import React from 'react';
-import { withStyles, makeStyles, Theme, createStyles } from '@mui/material/styles';
+import { Theme } from '@mui/material/styles';
+import withStyles from '@mui/styles/withStyles';
+import makeStyles from '@mui/styles/makeStyles';
+import createStyles from '@mui/styles/createStyles';
 import { green } from '@mui/material/colors';
 import FormLabel from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl';

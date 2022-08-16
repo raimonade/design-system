@@ -4,7 +4,9 @@ import CircularProgress, { CircularProgressProps } from '@mui/material/CircularP
 import { green } from '@mui/material/colors';
 import Fab from '@mui/material/Fab';
 import LinearProgress, { LinearProgressProps } from '@mui/material/LinearProgress';
-import { createStyles, makeStyles, Theme } from '@mui/material/styles';
+import { Theme } from '@mui/material/styles';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import Typography from '@mui/material/Typography';
 import CheckIcon from '@mui/icons-material/Check';
 import SaveIcon from '@mui/icons-material/Save';

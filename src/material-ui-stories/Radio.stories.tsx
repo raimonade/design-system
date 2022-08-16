@@ -3,7 +3,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import { withStyles } from '@mui/material/styles';
+import withStyles from '@mui/styles/withStyles';
 import { green } from '@mui/material/colors';
 import Radio, { RadioProps } from '@mui/material/Radio';
 

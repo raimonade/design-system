@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import { createStyles, makeStyles, Theme } from '@mui/material/styles';
+import { Theme } from '@mui/material/styles';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -184,10 +186,7 @@ const ButtonsWithIconsAndLabelInternal = () => {
       <Button variant="contained" color="primary" className={classes.button} endIcon={<SendIcon />}>
         Send
       </Button>
-      <Button
-        variant="contained"
-        className={classes.button}
-        startIcon={<CloudUploadIcon />}>
+      <Button variant="contained" className={classes.button} startIcon={<CloudUploadIcon />}>
         Upload
       </Button>
       <Button
