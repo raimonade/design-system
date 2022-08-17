@@ -4,7 +4,6 @@ const sharedPresets = [
     '@babel/preset-react',
     {
       runtime: 'automatic',
-      importSource: '@emotion/react',
     },
   ],
 ];

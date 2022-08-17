@@ -1,7 +1,7 @@
 import { ThemeProvider as MuiThemeProvider, CssBaseline } from '@mui/material';
 import { StyledEngineProvider } from '@mui/material/styles';
 import { StylesProvider } from '@mui/styles';
-import { ThemeProvider, Global, css } from '@emotion/react';
+import { ThemeProvider, CacheProvider, Global, css } from '@emotion/react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { lightTheme, darkTheme } from '../../src/shared/theme';
 
@@ -13,15 +13,15 @@ export default (Story, context) => {
     <Story />
   ) : (
     <>
-      <Global styles={getGlobalStyle(theme)} />
-      <StylesProvider injectFirst>
-        <MuiThemeProvider theme={theme}>
-          <CssBaseline />
-          <ThemeProvider theme={theme}>
-            <Story/>
-          </ThemeProvider>
-        </MuiThemeProvider>
-      </StylesProvider>
+        <Global styles={getGlobalStyle(theme)} />
+        <StylesProvider injectFirst>
+          <MuiThemeProvider theme={theme}>
+            <CssBaseline />
+            <ThemeProvider theme={theme}>
+              <Story />
+            </ThemeProvider>
+          </MuiThemeProvider>
+        </StylesProvider>
     </>
   );
 };
@@ -29,6 +29,7 @@ export default (Story, context) => {
 const getGlobalStyle = theme => css`
   body {
     background-color: ${theme.palette.panelBackgroundColor};
+    padding:20px;
   }
   p {
     margin: 0;
