@@ -1,4 +1,4 @@
-import { ComponentsOverrides, createTheme, DeprecatedThemeOptions, adaptV4Theme } from '@mui/material/styles';
+import { ComponentsOverrides, createTheme, DeprecatedThemeOptions } from '@mui/material/styles';
 import { BrandColors, MonochromeColors } from '@mui/material/styles/createPalette';
 import { deepMerge } from '../utils/deep-merge';
 

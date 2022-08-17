@@ -8,9 +8,7 @@ const sharedPresets = [
   ],
 ];
 const shared = {
-  ignore: ['src/**/*.stories.ts'],
-  presets: sharedPresets,
-  plugins: ['@babel/plugin-transform-runtime'],
+  ignore: ['src/**/*.spec.ts', 'src/**/*.stories.tsx'],
 };
 
 module.exports = {
