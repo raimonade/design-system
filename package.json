@@ -105,7 +105,8 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
-    "dist"
+    "src",
+    "build"
   ],
   "types": "dist/index.d.ts",
   "repository": "git@github.com:raimonade/design-system.git",
