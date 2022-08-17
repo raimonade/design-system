@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
+import ClickAwayListener from '@mui/base/ClickAwayListener';
 import Grow from '@mui/material/Grow';
 import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
@@ -151,18 +151,20 @@ const SplitButtonInternal = () => {
             >
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
-                  <MenuList id="split-button-menu">
-                    {options.map((option, index) => (
-                      <MenuItem
-                        key={option}
-                        disabled={index === 2}
-                        selected={index === selectedIndex}
-                        onClick={event => handleMenuItemClick(event, index)}
-                      >
-                        {option}
-                      </MenuItem>
-                    ))}
-                  </MenuList>
+                  <div>
+                    <MenuList id="split-button-menu">
+                      {options.map((option, index) => (
+                        <MenuItem
+                          key={option}
+                          disabled={index === 2}
+                          selected={index === selectedIndex}
+                          onClick={event => handleMenuItemClick(event, index)}
+                        >
+                          {option}
+                        </MenuItem>
+                      ))}
+                    </MenuList>
+                  </div>
                 </ClickAwayListener>
               </Paper>
             </Grow>

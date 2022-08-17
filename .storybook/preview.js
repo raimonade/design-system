@@ -1,9 +1,9 @@
 import { lightTheme, darkTheme } from './theme';
-import withTheme from './decorators/with-theme';
 import { DocsContainer } from './components/doc-container';
+import withTheme from './decorators/with-theme';
 // or global addParameters
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   docs: {
     container: DocsContainer,
   },
@@ -18,7 +18,7 @@ export const parameters = {
     dark: darkTheme,
     // Override the default light theme
     light: lightTheme,
-  }
+  },
 };
 
 export const decorators = [withTheme];

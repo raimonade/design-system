@@ -172,8 +172,8 @@ export const darkThemeOptions: DeprecatedThemeOptions = deepMerge({}, lightTheme
   },
 } as DeprecatedThemeOptions);
 
-export const darkTheme = createTheme(adaptV4Theme(darkThemeOptions));
-export const lightTheme = createTheme(adaptV4Theme(lightThemeOptions));
+export const darkTheme = createTheme(darkThemeOptions);
+export const lightTheme = createTheme(lightThemeOptions);
 
 export const lightOverrides: ComponentsOverrides = {
   MuiCssBaseline: {
