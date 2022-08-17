@@ -8,8 +8,6 @@ import React from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { darkTheme, lightTheme } from '../../src/shared/theme';
 
-
-
 export const DocsContainer = ({ children, context }) => {
   const dark = useDarkMode();
   const theme = dark ? darkTheme : lightTheme;
@@ -33,7 +31,9 @@ export const DocsContainer = ({ children, context }) => {
                     },
                   },
                 }}
-              />
+              >
+                {children}
+              </BaseContainer>
             </ThemeProvider>
           </MuiThemeProvider>
         </StyledEngineProvider>
@@ -50,4 +50,3 @@ const getGlobalStyle = theme => css`
     margin: 0;
   }
 `;
-

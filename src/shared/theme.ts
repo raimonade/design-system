@@ -235,10 +235,17 @@ export const lightOverrides: ComponentsOverrides = {
   },
   MuiTab: {
     root: {
+      color: 'inherit',
       fontWeight: 600,
+      opacity: 0.7,
       [lightTheme.breakpoints.up('sm')]: {
         padding: '6px 20px',
         fontSize: 18,
+        minWidth: 160,
+      },
+      '&.Mui-selected': {
+        opacity: 1,
+        color: 'inherit',
       },
     },
   },

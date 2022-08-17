@@ -15,14 +15,12 @@ export default (Story, context) => {
     <>
       <Global styles={getGlobalStyle(theme)} />
       <StylesProvider injectFirst>
-        <StyledEngineProvider injectFirst>
-          <MuiThemeProvider theme={theme}>
-            <CssBaseline />
-            <ThemeProvider theme={theme}>
-              <Story />
-            </ThemeProvider>
-          </MuiThemeProvider>
-        </StyledEngineProvider>
+        <MuiThemeProvider theme={theme}>
+          <CssBaseline />
+          <ThemeProvider theme={theme}>
+            <Story/>
+          </ThemeProvider>
+        </MuiThemeProvider>
       </StylesProvider>
     </>
   );

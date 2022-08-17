@@ -1,6 +1,8 @@
 import { lightTheme, darkTheme } from './theme';
 import { DocsContainer } from './components/doc-container';
 import withTheme from './decorators/with-theme';
+import { addDecorator } from '@storybook/react';
+
 // or global addParameters
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -20,5 +22,4 @@ export const parameters = {
     light: lightTheme,
   },
 };
-
-export const decorators = [withTheme];
+addDecorator(withTheme);
